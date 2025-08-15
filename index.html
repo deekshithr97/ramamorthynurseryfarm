@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rama Moorthy Nursery Farm - Wholesale Greenhouse Seedlings</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="images/logo.jpg" alt="Rama Moorthy Nursery Farm Logo" class="logo-img">
+                <img src="images/logo.jpg" alt="Rama Moorthy Nursery Farm Logo" class="logo-img" loading="lazy" srcset="images/logo-small.jpg 480w, images/logo-medium.jpg 800w, images/logo.jpg 1200w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px">
                 <h2>Rama Moorthy Nursery Farm</h2>
             </div>
             <ul class="nav-menu">
@@ -78,7 +79,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/tomato-seedling.jpg" alt="Tomato Seedlings" loading="lazy">
+                        <img src="images/tomato-seedling.jpg" alt="Tomato Seedlings" loading="lazy" srcset="images/tomato-seedling-small.jpg 480w, images/tomato-seedling-medium.jpg 800w, images/tomato-seedling.jpg 1200w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px">
                     </div>
                     <div class="product-content">
                         <h3>Tomato</h3>
@@ -89,7 +90,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/cauliflower-seedling.jpg" alt="Cauliflower Seedlings" loading="lazy">
+                        <img src="images/cauliflower-seedling.jpg" alt="Cauliflower Seedlings" loading="lazy" srcset="images/cauliflower-seedling-small.jpg 480w, images/cauliflower-seedling-medium.jpg 800w, images/cauliflower-seedling.jpg 1200w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px">
                     </div>
                     <div class="product-content">
                         <h3>Cauliflower</h3>
@@ -100,7 +101,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/chilli-seedling.jpg" alt="Chilli Seedlings" loading="lazy">
+                        <img src="images/chilli-seedling.jpg" alt="Chilli Seedlings" loading="lazy" srcset="images/chilli-seedling-small.jpg 480w, images/chilli-seedling-medium.jpg 800w, images/chilli-seedling.jpg 1200w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px">
                     </div>
                     <div class="product-content">
                         <h3>Chilli</h3>
@@ -111,7 +112,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/marigold-seedling.jpg" alt="Marigold Seedlings" loading="lazy">
+                        <img src="images/marigold-seedling.jpg" alt="Marigold Seedlings" loading="lazy" srcset="images/marigold-seedling-small.jpg 480w, images/marigold-seedling-medium.jpg 800w, images/marigold-seedling.jpg 1200w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px">
                     </div>
                     <div class="product-content">
                         <h3>Marigold</h3>
@@ -141,8 +142,6 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Rama Moorthy Nursery Farm Seedlings</h3>
-                    <p>Your trusted partner for premium greenhouse seedlings, helping you achieve a bountiful harvest season after season.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -157,7 +156,7 @@
                     <h4>Contact Info</h4>
                     <p>📞 <a href="tel:+918667207109">+91 86672 07109</a></p>
                     <p>📧 ramamoorthyarj@gmail.com</p>
-                    <p>📍 Adraganapalli,Shoolagiri,Krishnagiri,Tamil Nadu 635117</p>
+                    <p>📍 Adraganapalli,Shoolagiri,Tamil Nadu 635117</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -166,6 +165,19 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered: ', registration);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
